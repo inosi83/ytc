@@ -1,0 +1,18 @@
+package org.comstudy.ex03;
+
+import java.util.Scanner;
+
+public class Ex01 {
+	private static Scanner scan = new Scanner(System.in);
+	public static void main(String[] args){
+		
+		int score = 0;
+		char grade = 'F';
+		//성적을 score에 입력 받아서 학점을 grade에 담는다.
+		//성적을 입력받아 학점을 출력하는 프로그래밍
+		//단 0점~100점 사이의 점수만 가능하도록 한다.
+		//0~100점 사이가 아니면 Error!를 출력하도록 한다.
+		System.out.print("점수입력: ");
+		score = scan.nextInt();
+	}
+}

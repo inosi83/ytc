@@ -1,0 +1,21 @@
+package org.comstudy21.ex01;
+
+public class Ex02 {
+
+	public static void main(String[] args) {
+		
+		int [] arr = {30,10,50,10,40,20};
+		int number = 10;
+		//arr 배열에 number 같은 값을 가진 요소가 잇으면 
+		//Math.random을 이용해서 값을 바꿔라.
+		//단 arr배열에는 중복 되는 값이 없어야 한다.
+		int size = arr.length;
+		for(int i=0; i<size; i++){
+			if(arr[i] == number){
+				arr[i] = (int)(1+Math.random()*50);
+				i = -1;
+			}
+				System.out.print(arr[i]+" ");
+		}//for
+	}//main
+}

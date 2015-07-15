@@ -1,0 +1,12 @@
+package org.comstudy.ex03;
+
+public class Ex02 {
+
+	public static void main(String[] args){
+		
+		double d = Math.random()*100;
+		int num = (int)Math.floor(d);//casting~
+		
+		System.out.println("num => " + num);
+	}
+}

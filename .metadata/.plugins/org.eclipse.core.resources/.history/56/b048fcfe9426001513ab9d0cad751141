@@ -1,0 +1,17 @@
+package org.comstudy21.ex01;
+
+public class Ex01 {
+
+	public static void main(String[] args){
+		
+		int q = 4;
+		for(int a=0; a<9; a++){
+			for(int b=0; b<5; b++){
+				System.out.print(b<a-q ? " ":"*");
+			}
+			System.out.println();
+			q = a<4 ? q+1 : q-1;
+		}//for
+	}//main
+	
+}

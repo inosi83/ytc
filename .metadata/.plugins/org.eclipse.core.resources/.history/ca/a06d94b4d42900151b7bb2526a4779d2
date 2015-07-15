@@ -1,0 +1,32 @@
+package org.comstudy21.ex01;
+
+public class Ex02 {
+
+	public static void main(String[] args) {
+		
+		int [] arr = {3,1,5,1,4,2};
+		int number = 1;
+		//arr 배열에 number 같은 값을 가진 요소가 잇으면 
+		//Math.random을 이용해서 값을 바꿔라.
+		//단 arr배열에는 중복 되는 값이 없어야 한다.
+		int size = arr.length;
+		for(int i=0; i<size; i++){
+			if(arr[i] == number){
+				int newNum = (int)(1+Math.random()*11);
+				//arr의 0번지 ~ arr의 cnt번지까지 난수와 같은것이 있는지 검사
+				//같은 것이 있다면 새 난수 발생.
+				//다시 0 번지 부터 cnt번지까지 같은것이 있는지 검사.
+				for(int j=0; j<size; j++){
+					if(newNum == arr[j]){
+						newNum = (int)(1+Math.random()*10);
+						j = -1;
+					}
+				}
+				arr[i] = newNum;
+			}
+		}//for
+		for(int i=0; i<size; i++){
+		System.out.print(arr[i]+" ");
+		}
+	}//main
+}

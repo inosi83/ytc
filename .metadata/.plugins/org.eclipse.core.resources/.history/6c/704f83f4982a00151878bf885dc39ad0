@@ -1,0 +1,19 @@
+package org.comstudy21.ex01;
+
+class Point2 {
+	int x;
+	int y;
+}
+public class Ex04 {
+
+	public static void main(String[] args) {
+		
+		
+		Point2 pt01 = new Point2();
+		pt01.x = 100;
+		pt01.y = 200;
+		
+		System.out.println("pt01.x = "+pt01.x);
+		System.out.println("pt01.y = "+pt01.y);
+	}
+}

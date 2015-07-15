@@ -1,0 +1,10 @@
+package org.comstudy.ex03;
+
+public class Ex12 {
+
+	public static void main(String[] args){
+		
+		int sum = 0;
+
+	}
+}

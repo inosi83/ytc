@@ -1,0 +1,57 @@
+package org.comstudy21.ex01;
+
+import java.util.Scanner;
+
+public class Homework02 {
+
+	static class Sung {
+		
+		int kor, eng, mat;
+		int total, rank;
+		double avg;
+	}
+	static Sung[] people = new Sung[30];
+	static int top = 0;
+	static Scanner scan = new Scanner(System.in);
+	static String getName(String title){
+		System.out.println(title+" : ");
+		String value = scan.nextLine();
+		return value;
+	}
+	static void input(){
+		System.out.println("***INPUT***");
+		people[top].name = getName("성명");
+		System.out.println("국어 : ");
+		System.out.println("영어 : ");
+		System.out.println("수학 : ");
+		//성명 : 홍길동
+		//국어 : 34
+		//영어 : 65
+		//수학 : 34
+	}
+	static void output(){
+		System.out.println("***OUTPUT***");
+	//성적		국어		영어		수학		총점		평균		등수
+	//========================================================
+	//홍길동       34		65		34		343		34		 1
+	}
+	static void search(){
+		System.out.println("***SEARCH***");
+	}
+	static void end(){
+		System.out.println("***END***");
+	}
+	public static void main(String[] args) {
+		do{
+			System.out.println("1.입력 2.출력 3.검색 4.종료");
+			System.out.print("선택: ");
+			int no = scan.nextInt();
+			switch(no){
+			case 1 :input(); break;
+			case 2 :output(); break;
+			case 3 :search(); break;
+			case 4 :end(); 
+			}
+		}while(true);
+	}
+}

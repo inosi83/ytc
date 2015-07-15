@@ -1,0 +1,14 @@
+package org.comstudy21.ex01;
+
+public class Ex01 {
+
+	public static void main(String[] args){
+		
+		int q = 0;
+		for(int a=0; a<9; a++){
+			System.out.println("*");
+			q = a<4 ? q+1 : q-1;
+		}//for
+	}//main
+	
+}

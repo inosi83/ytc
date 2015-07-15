@@ -1,0 +1,10 @@
+package org.comstudy.ex03;
+
+public class Ex02 {
+
+	public static void main(String[] args){
+		
+		double d = Math.random();
+		System.out.println("d =>" + d);
+	}
+}

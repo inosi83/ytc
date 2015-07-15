@@ -1,0 +1,81 @@
+package org.comstudy21.ex01;
+
+import java.util.Scanner;
+
+public class Ex03 {
+		private static Scanner scan = new Scanner(System.in);
+		
+		static int number = 1 + (int) (Math.random() * 100);// 1~100사이의 난수 발생
+		static int userNum = 0;
+		static int min = 1, max = 100;
+		static int cnt = 5;
+		
+		static void init(){
+			int number = 1 + (int) (Math.random() * 100);// 1~100사이의 난수 발생
+			int userNum = 0;
+			int min = 1, max = 100;
+			int cnt = 5;
+			System.out.println("시스템에 선택한 숫자를 맞춰보세요.");
+			System.out.print("얼마일까요(1~100): ");
+			userNum = scan.nextInt();
+		}
+		
+		public static void main(String[] args) {
+		
+			char yn = 'y';
+			do {
+				init();
+				
+				while (userNum > number || userNum < number) {
+					cnt = cnt - 1;
+					if (userNum > number) {
+						max = userNum - 1;
+						System.out.println("오답! 시도횟수" + cnt + "회 남았습니다.");
+						System.out.println("큰 숫자를 입력하셨습니다.");
+						System.out.print("얼마일까요(" + min + "~" + max + ") : ");
+						userNum = scan.nextInt();
+						while (max < userNum || userNum < min) {
+							System.out.print("범위 초과 다시입력 : ");
+							userNum = scan.nextInt();
+						}
+					} else if (userNum < number) {
+						min = userNum + 1;
+						System.out.println("오답! 시도횟수" + cnt + "회 남았습니다.");
+						System.out.println("작은 숫자를 입력하셨습니다.");
+						System.out.print("얼마일까요(" + min + "~" + max + ") : ");
+						userNum = scan.nextInt();
+						while (max < userNum || userNum < min) {
+							System.out.print("범위 초과 다시입력 : ");
+							userNum = scan.nextInt();
+						}
+					} // else if
+					if (cnt == 1) {
+						System.out.println("실격! 기회를 모두 잃으셨습니다.("+number+")");
+						System.out.print("재시도 하시겠습니까?[y/n] : ");
+						yn = scan.next().charAt(0);
+						while (yn != 'y' && yn != 'n') {
+							System.out.print("다시입력하세요[y/n] : ");
+							yn = scan.next().charAt(0);
+						} // while
+						if (yn != 'n') {
+							break;
+						}
+					}
+					if (yn == 'n') {
+						break;
+					}
+				} // while
+				if (number == userNum) {
+					System.out.println("정답!(" + number + ")");
+					System.out.print("또 하시겠습니까?[y/n] : ");
+					yn = scan.next().charAt(0);
+					while (yn != 'y' && yn != 'n') {
+						System.out.print("다시입력하세요[y/n] : ");
+						yn = scan.next().charAt(0);
+					} // while
+				} // if
+				
+			} while (yn == 'y');
+			System.out.println("다음에 다시 만나요");
+		}
+}

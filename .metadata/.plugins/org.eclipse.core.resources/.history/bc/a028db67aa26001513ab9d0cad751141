@@ -1,0 +1,14 @@
+package org.comstudy21.ex01;
+
+public class Ex02 {
+ 
+	public static void main(String[] args) {
+		int [] arr = new int[5];
+		
+		arr[0] = 30;
+		arr[1] = 70;
+		arr[2] = 40;
+		arr[3] = 90;
+		arr[4] = 80;
+	}//main
+}//class

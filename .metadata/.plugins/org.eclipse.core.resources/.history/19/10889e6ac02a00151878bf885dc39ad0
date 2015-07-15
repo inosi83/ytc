@@ -1,0 +1,123 @@
+package org.comstudy21.ex01;
+
+import java.util.Scanner;
+
+class Sung {
+	String name;
+	int kor, eng, mat;
+	int total, rank;
+	char grade;
+	double avg;
+}
+
+public class Homework02 {
+
+	static Sung[] people = new Sung[30];
+	static int top = 0;
+	static Scanner scan = new Scanner(System.in);
+
+	static void input() {
+		System.out.println("***INPUT***");
+		people[top] = new Sung();
+		System.out.print("성명 : ");
+		people[top].name = scan.next();
+		System.out.print("국어 : ");
+		people[top].kor = scan.nextInt();
+		System.out.print("영어 : ");
+		people[top].eng = scan.nextInt();
+		System.out.print("수학 : ");
+		people[top].mat = scan.nextInt();
+
+		people[top].total = people[top].kor + people[top].eng + people[top].mat;
+		people[top].avg = people[top].total / 3.0;
+		switch ((int) (people[top].total) / 30) {
+		case 10:
+		case 9:
+			people[top].grade = 'A';
+			break;
+		case 8:
+			people[top].grade = 'B';
+			break;
+		case 7:
+			people[top].grade = 'C';
+			break;
+		case 6:
+			people[top].grade = 'D';
+			break;
+		default:
+			people[top].grade = 'F';
+		}
+		people[top].rank = 0;
+		for(int i=0; i<top-1; i++){
+			for(int j=i+1; j<top; j++){
+				if(people[i].rank > people[j].rank){
+					people[top].rank = people[i].rank;
+					people[i].rank = people[j].rank;
+					people[j].rank = people[top].rank;
+					j= -1;
+				}
+			}
+		}
+		// 성명 : 홍길동
+		// 국어 : 34
+		// 영어 : 65
+		// 수학 : 34
+		top++;
+	}
+
+	static void output() {
+		System.out.println("***OUTPUT***");
+		System.out.println("성적\t국어\t영어\t수학\t총점\t평균\t학점\t등수");
+		System.out.println("===============================================================");
+		for (int i = 0; i < top; i++) {
+			System.out.printf("%s\t%d\t%d\t%d\t%d\t%.1f\t %c\t%d\n", people[i].name, people[i].kor, people[i].eng,
+					people[i].mat, people[i].total, people[i].avg, people[i].grade, people[i].rank);
+		}
+		System.out.println();
+		// 성적 국어 영어 수학 총점 평균 등수
+		// ========================================================
+		// 홍길동 34 65 34 343 34 1
+	}
+
+	static void search() {
+		System.out.println("***SEARCH***");
+		System.out.print("이름을 입력하시오 : ");
+		String name = scan.next();
+		for (int i = 0; i < top; i++) {
+			if (name.equals(people[i].name)) {
+				System.out.println("성적\t국어\t영어\t수학\t총점\t평균\t학점\t등수");
+				System.out.println("===============================================================");
+				System.out.printf("%s\t%d\t%d\t%d\t%d\t%.1f\t %c\t%d\n", people[i].name, people[i].kor, people[i].eng,
+						people[i].mat, people[i].total, people[i].avg, people[i].grade,people[i].rank);
+			}
+		}
+		System.out.println();
+	}
+
+	static void end() {
+		System.out.println("***END***");
+		System.exit(0);
+	}
+
+	public static void main(String[] args) {
+		do {
+			System.out.println("1.입력 2.출력 3.검색 4.종료");
+			System.out.print("선택: ");
+			int no = scan.nextInt();
+			System.out.println();
+			switch (no) {
+			case 1:
+				input();
+				break;
+			case 2:
+				output();
+				break;
+			case 3:
+				search();
+				break;
+			case 4:
+				end();
+			}
+		} while (true);
+	}
+}

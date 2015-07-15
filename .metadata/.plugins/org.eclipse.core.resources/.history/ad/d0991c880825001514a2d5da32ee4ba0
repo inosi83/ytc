@@ -1,0 +1,20 @@
+package org.comstudy.ex03;
+
+public class Ex14 {
+
+	public static void main(String[] args){
+	
+		int cur = 1;
+		int next = 0;
+		int sum = 0;
+		for(int pre = 0;cur<=21;){
+			System.out.print(cur + ( cur==21?"=":"+"));
+			
+			sum = sum + cur;
+			next = pre + cur;
+			pre = cur;
+			cur = next;
+		}
+		System.out.print(sum);
+	}
+}

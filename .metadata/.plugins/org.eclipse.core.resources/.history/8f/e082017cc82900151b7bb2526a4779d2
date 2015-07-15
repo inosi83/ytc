@@ -1,0 +1,13 @@
+package org.comstudy21.ex01;
+
+public class Ex01 {
+
+	public static void main(String[] args) {
+		//String 타입의 변수 name을 선언하고 본인 이름 대입한다.
+		
+		String name = "김정환";
+		System.out.print(name);
+		
+	}
+
+}

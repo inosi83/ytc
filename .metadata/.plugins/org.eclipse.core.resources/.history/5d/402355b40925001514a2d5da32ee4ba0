@@ -1,0 +1,32 @@
+package org.comstudy.ex03;
+
+public class Ex14 {
+
+	public static void main(String[] args){
+		boolean flag = true;
+		int sum = 0;
+		for(int pre = 0, cur = 1, next = 0;cur<=21;next = pre + cur, pre = cur, cur = next){
+			if(flag = true){
+				System.out.print(cur + ( cur==21?"=":"+"));
+				sum = (cur ==1? sum + cur : sum - cur);
+			}
+			
+			
+			sum = sum + cur;
+		
+		}
+		System.out.print(sum);
+	}
+}
+/*
+public static void main(String[] args){
+	
+		int sum = 0;
+		for(int pre = 0, cur = 1, next = 0;cur<=21;next = pre + cur, pre = cur, cur = next){
+			System.out.print(cur + ( cur==21?"=":"+"));
+			
+			sum = sum + cur;
+		
+		}
+		System.out.print(sum);
+*/

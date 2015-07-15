@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Ex05 {
+
+	
+	public static void main(String[] args){
+		
+		Scanner scan = new Scanner(System.in);
+		int q = 0;
+		
+		System.out.print("ют╥б: ");
+		q = scan.nextInt();
+		
+		if((q%2 == 0)&&(q<5)){
+			System.out.print("ERROR!");
+		}else{
+			for(int a=0; a<q; a++){
+				System.out.print("*");
+			}//for
+			System.out.println();
+		}//else
+	}//main
+}

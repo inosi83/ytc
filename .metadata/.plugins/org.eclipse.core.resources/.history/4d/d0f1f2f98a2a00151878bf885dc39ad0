@@ -1,0 +1,16 @@
+package org.comstudy21.ex01;
+
+public class Ex02 {
+
+	static String getName(){
+		String n = "ȫ�浿";
+		
+		return n;
+	}
+	public static void main(String[] args) {
+		
+		String name = getName();
+		
+		System.out.println("Name = "+ name);
+	}
+}

@@ -1,0 +1,20 @@
+package org.comstudy21.ex01;
+
+public class Ex03 {
+
+	public static void main(String[] args) {
+		
+		int[] arr = new int[]{60, 90, 80, 70, 100};
+		int[] arr2;
+		arr2 = new int[arr.length];
+		int i = 0;
+		int j =(arr.length-1)-i;
+		//위치가 reverse 되도록한다.
+		for(i=0; i<arr.length; i++){
+				arr2[j] = arr[i];		
+				System.out.print(arr2[i]+" ");
+		}
+	
+		
+	}
+}
